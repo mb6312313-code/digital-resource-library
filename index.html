@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A premium protected digital resource library organized from verified attached documents.">
+  <title>Digital Resource Library</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="assets/resources.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="app-page">
+  <div class="loader" id="loader"><span></span><p>Preparing your library</p></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="Digital Resource Library home">
+      <span class="brand-mark">DR</span>
+      <span>Digital Library</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#library">Library</a>
+      <a href="#categories">Categories</a>
+      <a href="#latest">Latest</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="ghost-button" id="logoutBtn" type="button">Logout</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Premium resource vault</p>
+          <h1>Everything for Everyone.</h1>
+          <p class="subheadline">All resources are organized in one place.</p>
+          <p class="prayer">If this library helped you,<br>Just remember us in your prayers ❤️</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#library">Browse Library</a>
+            <a class="secondary-button" href="#categories">Categories</a>
+          </div>
+        </div>
+        <div class="hero-panel reveal" aria-label="Library snapshot">
+          <div class="orbit"></div>
+          <div class="spotlight-card">
+            <span class="mini-label">Live index</span>
+            <strong id="heroTotal">0</strong>
+            <span>clean resources</span>
+          </div>
+          <div class="mini-grid" id="heroChips"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section-shell reveal" aria-label="Library statistics">
+      <div><strong data-count="0" id="statResources">0</strong><span>Resources</span></div>
+      <div><strong data-count="0" id="statCategories">0</strong><span>Categories</span></div>
+      <div><strong data-count="0" id="statSources">0</strong><span>Source PDFs</span></div>
+      <div><strong data-count="0" id="statHosts">0</strong><span>Platforms</span></div>
+    </section>
+
+    <section class="section-shell library-section" id="library">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Explore</p>
+        <h2>Resource Library</h2>
+      </div>
+
+      <div class="control-surface reveal">
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search resources, sources, hosts..." autocomplete="off">
+          <div class="suggestions" id="suggestions" role="listbox"></div>
+        </div>
+        <select id="categoryFilter" aria-label="Filter by category"></select>
+        <select id="sortSelect" aria-label="Sort resources">
+          <option value="az">Sort A-Z</option>
+          <option value="latest">Sort Latest</option>
+          <option value="popular">Popular Filter</option>
+        </select>
+      </div>
+
+      <div class="result-meta reveal">
+        <span id="resultCount">0 resources</span>
+        <button class="text-button" id="clearFilters" type="button">Clear filters</button>
+      </div>
+
+      <div class="resource-grid" id="resourceGrid"></div>
+      <div class="empty-state" id="emptyState">No matching resources found.</div>
+    </section>
+
+    <section class="section-shell" id="latest">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Fresh picks</p>
+        <h2>Latest Resources</h2>
+      </div>
+      <div class="feature-row" id="latestResources"></div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Curated</p>
+        <h2>Featured Resources</h2>
+      </div>
+      <div class="feature-row" id="featuredResources"></div>
+    </section>
+
+    <section class="section-shell" id="categories">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Browse by focus</p>
+        <h2>Popular Categories</h2>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section-shell faq" id="faq">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Answers</p>
+        <h2>FAQ</h2>
+      </div>
+      <details open>
+        <summary>Where did these resources come from?</summary>
+        <p>They were extracted from the attached PDFs, deduplicated, categorized, and cleaned before display.</p>
+      </details>
+      <details>
+        <summary>Are unsafe links shown?</summary>
+        <p>No. Links clearly related to hacking, spam, account abuse, or similar misuse were excluded from the public library.</p>
+      </details>
+      <details>
+        <summary>How is the site protected?</summary>
+        <p>Vercel middleware checks an authenticated cookie created by a server-side password verification endpoint.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Digital Resource Library</p>
+    <p>Organized with care from the provided documents.</p>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+</body>
+</html>

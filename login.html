@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Access Digital Library</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-card reveal">
+      <div class="brand login-brand">
+        <span class="brand-mark">DR</span>
+        <span>Digital Library</span>
+      </div>
+      <p class="eyebrow">Private access</p>
+      <h1>Enter Library Password</h1>
+      <p>One password opens the complete protected resource library.</p>
+      <form id="loginForm" class="login-form">
+        <label for="passwordInput">Password</label>
+        <div class="password-wrap">
+          <input id="passwordInput" name="password" type="password" required autocomplete="current-password" placeholder="Enter password">
+          <button id="togglePassword" type="button" aria-label="Show password">Show</button>
+        </div>
+        <p class="form-error" id="loginError" role="alert"></p>
+        <button class="primary-button full-button" type="submit">Open Website</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
